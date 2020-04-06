@@ -5,7 +5,7 @@ Correction Td SDL_2 part_2
 
 <p>Il faut ajouter la bibliothèque SDL_Image, celle-ci nous donnera accès à l'ensemble de méthodes permettant d'integrer des images à notre projet dans les formats JPG, PNG ....
 La version utilisée dans le cadre de notre projet SDL2, lors de l'écriture de ces lignes est la vesrion 2_0_5.
-Cette bibliothèque est écrite en c, compilable sur les compilateurs C compatibles avec les environnements Windows, Mac et linux ( Gcc, MSVC...) <p>
+Cette bibliothèque est écrite en C, compilable sur les compilateurs C compatibles avec les environnements Windows, Mac et linux ( Gcc, MSVC...) <p>
 
 <p>Cf Descrption :  https://www.libsdl.org/projects/SDL_image/</p>
 
@@ -13,3 +13,38 @@ Cette bibliothèque est écrite en c, compilable sur les compilateurs C compatib
 It loads images as SDL surfaces and textures, and supports the following formats: BMP, GIF, JPEG, LBM, PCX, PNG, PNM, SVG, TGA, TIFF, WEBP, XCF, XPM, XV</p>
 
 <p>As of SDL_image 1.2.5, JPEG, PNG, TIFF, and WEBP image loading libraries are dynamically loaded, so if you don't need to load those formats, you don't need to include those shared libraries. libpng depends on libz, and libtiff depends on both libz and libjpeg.<p/>
+
+
+<h3>2) Les étapes de configuration du projet pour l'utilisation de SDL_image</h3>
+
+Pour installer cet SDL_Image, Vous devez télécharger la bibliothèque :
+
+  https://www.libsdl.org/projects/SDL_image/
+
+Le choix de la version de la bibliothèque se fera en fonction de la version du compilateur utilisé.
+<h4>Pour Windows</h4>
+ Si vous utilisez un compilateur type GCC vous devez déployer cette version : 
+    -SDL2_image-devel-2.0.5-mingw.tar.gz (MinGW 32/64-bit)
+ Si vous utilisez un compilateur type MSVC vous devez déployer cette version :
+    -SDL2_image-devel-2.0.5-VC.zip (Visual C++ 32/64-bit)
+    
+ <h4>Pour Mac</h4>
+    -SDL2_image-2.0.5.dmg
+  
+ <h4>Pour Linux</4>
+    - Vous devez utiliser votre gestionnaire de paquets afin de charger cette bibliothèque.
+    
+    dpkg (Debian, Ubuntu et autres dérivées) ;
+    RPM (Red Hat, Fedora, Mageia et openSUSE, etc.) ;
+    bower (spécialisé en front-end) ; 
+    yarn (alternative open source à npm).
+
+ Prérequis :
+ Configurer votre projet avec la bibliothèsuqe SDL2, vous pouvez télécharger la bibliothèque en suivant ce lien : 
+    https://www.libsdl.org/download-2.0.php
+ CF : Déploiement de la SDL2 dans un prjet C/C++
+
+La version de SDL_image utilisée lors de la rédaction de ces lignes est : 2_0_5
+
+
+
