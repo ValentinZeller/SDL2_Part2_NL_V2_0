@@ -1,0 +1,5 @@
+#Dossiers/fichiers exclus du git
+
+/bin/*
+/obj/*
+*.dll
