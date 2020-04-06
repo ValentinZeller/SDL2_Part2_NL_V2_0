@@ -31,7 +31,7 @@ Le choix de la version de la bibliothèque se fera en fonction de la version du 
  <h4>Pour Mac</h4>
     -SDL2_image-2.0.5.dmg
   
- <h4>Pour Linux</4>
+<h4>Pour Linux</4>
    <p>Vous devez utiliser votre gestionnaire de paquets afin de charger cette bibliothèque.</p>
    
    <p>-dpkg (Debian, Ubuntu et autres dérivées)</p>
