@@ -17,7 +17,7 @@ It loads images as SDL surfaces and textures, and supports the following formats
 
 <h3>2) Les étapes de configuration du projet pour l'utilisation de SDL_image</h3>
 
-Pour installer cet SDL_Image, Vous devez télécharger la bibliothèque :
+Pour installer SDL_Image, Vous devez télécharger la bibliothèque :
 
   https://www.libsdl.org/projects/SDL_image/
 
@@ -39,12 +39,26 @@ Le choix de la version de la bibliothèque se fera en fonction de la version du 
     bower (spécialisé en front-end) ; 
     yarn (alternative open source à npm).
 
- Prérequis :
- Configurer votre projet avec la bibliothèsuqe SDL2, vous pouvez télécharger la bibliothèque en suivant ce lien : 
+<p> Prérequis :</p>
+<p> Configurer votre projet avec la bibliothèsuqe SDL2, vous pouvez télécharger la bibliothèque en suivant ce lien : </p>
     https://www.libsdl.org/download-2.0.php
- CF : Déploiement de la SDL2 dans un prjet C/C++
+ <p>CF : Déploiement de la SDL2 dans un projet C/C++</p>
 
-La version de SDL_image utilisée lors de la rédaction de ces lignes est : 2_0_5
+<p>La version de SDL_image utilisée lors de la rédaction de ces lignes est : 2_0_5</p>
+
+Pour utiliser SDL_image au sein de votre projet, vous devez configurer les options de compilation en y incluant les liens vers les fichiers .h et les lib static.
+
+CF : http://lazyfoo.net/tutorials/SDL/06_extension_libraries_and_loading_other_image_formats/windows/index.php
+
+
+<h3>3) Code C image PNG :</h3> 
+
+<h3>4) Les images animées : Les tilesets </h3>
+
+
+<h3>5) Images animées, update frames : </h3>
+
+
 
 
 
