@@ -32,12 +32,13 @@ Le choix de la version de la bibliothèque se fera en fonction de la version du 
     -SDL2_image-2.0.5.dmg
   
  <h4>Pour Linux</4>
-    - Vous devez utiliser votre gestionnaire de paquets afin de charger cette bibliothèque.
-    
-    dpkg (Debian, Ubuntu et autres dérivées) ;
-    RPM (Red Hat, Fedora, Mageia et openSUSE, etc.) ;
-    bower (spécialisé en front-end) ; 
-    yarn (alternative open source à npm).
+   <p>Vous devez utiliser votre gestionnaire de paquets afin de charger cette bibliothèque.</p>
+   
+   <p>-dpkg (Debian, Ubuntu et autres dérivées)</p>
+   <p>-RPM (Red Hat, Fedora, Mageia et openSUSE, etc.)</p>
+   <p>-bower (spécialisé en front-end)</p>
+   <p>-yarn (alternative open source à npm)</p>
+ 
 
 <p> Prérequis :</p>
 <p> Configurer votre projet avec la bibliothèsuqe SDL2, vous pouvez télécharger la bibliothèque en suivant ce lien : </p>
