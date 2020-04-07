@@ -14,13 +14,13 @@
 				<Option parameters="-t -w" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="../../SDL2-devel-2.0.10-mingw/SDL2-2.0.10/i686-w64-mingw32/include/" />
+					<Add directory="../SDL2_Lib_Dev/SDL2-2.0.12/i686-w64-mingw32/include" />
+					<Add directory="../SDL2_Lib_Dev/SDL2_image-2.0.5/i686-w64-mingw32/include" />
 				</Compiler>
 				<Linker>
-					<Add option="-lmingw32" />
-					<Add library="../../SDL2-devel-2.0.10-mingw/SDL2-2.0.10/i686-w64-mingw32/lib/libSDL2main.a" />
-					<Add library="../../SDL2-devel-2.0.10-mingw/SDL2-2.0.10/i686-w64-mingw32/lib/libSDL2.dll.a" />
-					<Add directory="../../SDL2-devel-2.0.10-mingw/SDL2-2.0.10/i686-w64-mingw32/lib/" />
+					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image" />
+					<Add directory="../SDL2_Lib_Dev/SDL2-2.0.12/i686-w64-mingw32/lib" />
+					<Add directory="../SDL2_Lib_Dev/SDL2_image-2.0.5/i686-w64-mingw32/lib" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -39,7 +39,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="SDL2_Display.h" />
+		<Unit filename="SDL_Display.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SDL_Display.h" />
+		<Unit filename="SDL_Manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SDL_Sprite.h" />
+		<Unit filename="SDL_sprite.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SDl_Manager.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
