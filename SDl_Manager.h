@@ -1,7 +1,13 @@
 #ifndef SDL_MANAGER_H_INCLUDED
 #define SDL_MANAGER_H_INCLUDED
 
+
 #include "SDL2/SDL.h"
+
+#define WINDOWH 768
+#define WINDOWW 1024
+
+
 
 /****************************************************************************************************
 Description : Structure SDL_Manager, Manager des instances Window et Renderer

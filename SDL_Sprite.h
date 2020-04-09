@@ -22,7 +22,7 @@ typedef struct SDL_Sprite{
 extern void loadSprite(SDL_Sprite *pSprite,char *cpath);
 extern void createTexture(SDL_Sprite *pSprite,SDL_Manager *pSdlManager);
 extern void destroy_Sprite(SDL_Sprite *pSprite);
-
+extern void SpriteToRender(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,int nNbTotalframe,int nDestRectX,int nDestRectY,int w,int h,int nScale);
 
 
 

@@ -39,6 +39,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="GameManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="GameManager.h" />
 		<Unit filename="SDL_Display.c">
 			<Option compilerVar="CC" />
 		</Unit>

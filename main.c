@@ -1,9 +1,10 @@
+
 #include<stdio.h>
 #include "SDl_Manager.h"
 #include "SDL_Sprite.h"
 #include "SDL_Display.h"
-//#include <math.h>
-//#define PI 3.14159265
+#include "GameManager.h"
+
 
 
 int main(int argc, char *argv[]){
@@ -11,19 +12,38 @@ int main(int argc, char *argv[]){
 
     SDL_Manager sdlManager;
     SDL_Sprite sprite;
+    int nX=0;
+    int nFrames=1;
 
     //appel fonction init SDL_Manager
     init_SdlManager(&sdlManager);
+    clearScreen(&sdlManager);
 
-    loadSprite(&sprite,"./Assets/Knight/noBKG_KnightAttack_strip.png");
+    loadSprite(&sprite,"./Assets/Goku.png");
     createTexture(&sprite,&sdlManager);
 
 
-    displaySprite(&sprite,&sdlManager,0,0,22,100,100,4);
+
+    while(1){
+
+    if(nFrames%2){
+        //TODO refactoring SpriteToRender
+        SpriteToRender(&sprite,&sdlManager,nX,794,2,(WINDOWW/2)-270,(WINDOWH/2)-355,48,98,10);
+
+    }else{
+         //TODO refactoring SpriteToRender
+        SpriteToRender(&sprite,&sdlManager,nX,794,2,(WINDOWW/2)-270,(WINDOWH/2)-355,70,98,10);
+    }
+
+    printf("x : %d",nX);
+
+    update(&nX,&nFrames);
+    SDL_Delay(200);
+    display(&sdlManager);
 
 
+    }
 
-    SDL_Delay(10000);
 
      //appel de la fonction destruction des attributs SDL_Manager
     destroy_SdlManager(&sdlManager);
@@ -31,7 +51,7 @@ int main(int argc, char *argv[]){
     destroy_Sprite(&sprite);
 
 
-
+    //appel de la fonction quitSDL
     quitSdl();
 
 
@@ -42,6 +62,7 @@ int main(int argc, char *argv[]){
 
 return 0;
 }
+
 
 
 

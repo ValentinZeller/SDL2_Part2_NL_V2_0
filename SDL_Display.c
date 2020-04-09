@@ -9,52 +9,27 @@ Output : SDL_Manager->Renderer
 Note ://
 ******************************************************************************************************/
 
-void displaySprite(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,int nNbTotalframe,int nDestRectX,int nDestRectY,
-                    int nScale){
-
-    SDL_Rect srcRect;
-    SDL_Rect destRect;
-
-
-    if(pSprite->ptexture){
-
-       //Rect Source
-       srcRect.x=nSrcRectX;
-       srcRect.y=nSrcRectY;
-       if(nNbTotalframe>0){
-        srcRect.w=pSprite->psurface->w/nNbTotalframe;
-        srcRect.h=pSprite->psurface->h;
-       }
-
-
-       //Rect Dest
-       destRect.x=nDestRectX;
-       destRect.y=nDestRectY;
-
-       if(nScale>0){
-        destRect.w=srcRect.w*nScale;
-        destRect.h=srcRect.h*nScale;
-
-       }else{
-
-        destRect.w=srcRect.w;
-        destRect.h=srcRect.h;
-       }
 
 
 
-        //TODO update renderer
+void clearScreen(SDL_Manager *pSdlManager){
+
+
+
+       SDL_SetRenderDrawColor(pSdlManager->pRenderer,70,187,217,255);
        SDL_RenderClear(pSdlManager->pRenderer);
-       SDL_RenderCopy(pSdlManager->pRenderer, pSprite->ptexture, &srcRect, &destRect);
 
 
 
-       SDL_RenderPresent(pSdlManager->pRenderer);
-
-
-    }
+}
 
 
 
+
+void display(SDL_Manager *pSdlManager){
+
+
+    SDL_RenderPresent(pSdlManager->pRenderer);
+    clearScreen(pSdlManager);
 
 }

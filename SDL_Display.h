@@ -6,9 +6,9 @@
 
 
 
-extern void displaySprite(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,int nNbTotalframe,int nDestRectX,int nDestRectY,int nScale);
 
-
+extern void clearScreen(SDL_Manager *pSdlManager);
+extern void display(SDL_Manager *pSdlManager);
 
 
 
