@@ -52,12 +52,12 @@ Pour utiliser SDL_image au sein de votre projet, vous devez configurer les optio
 CF : http://lazyfoo.net/tutorials/SDL/06_extension_libraries_and_loading_other_image_formats/windows/index.php
 
 
-<h3>3) Code C image PNG :</h3> 
+<h3>3) Code C image PNG :</h3>  cf source
 
-<h3>4) Les images animées : Les tilesets </h3>
+<h3>4) Les images animées : Les tilesets </h3>cf source
 
 
-<h3>5) Images animées, update frames : </h3>
+<h3>5) Images animées, update frames : </h3>cf source
 
 
 
