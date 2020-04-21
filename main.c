@@ -7,6 +7,7 @@
 
 
 
+
 int main(int argc, char *argv[]){
 
 
@@ -14,6 +15,7 @@ int main(int argc, char *argv[]){
     SDL_Sprite sprite;
     int nX=0;
     int nFrames=1;
+    tEventType event;
 
     //appel fonction init SDL_Manager
     init_SdlManager(&sdlManager);
@@ -22,9 +24,11 @@ int main(int argc, char *argv[]){
     loadSprite(&sprite,"./Assets/Goku.png");
     createTexture(&sprite,&sdlManager);
 
-
+    initGameState();
 
     while(1){
+
+    handleEvent(&event);
 
     if(nFrames%2){
         //TODO refactoring SpriteToRender

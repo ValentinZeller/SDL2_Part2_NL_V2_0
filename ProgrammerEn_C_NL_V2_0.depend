@@ -360,7 +360,7 @@
 1580117848 d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\programmeren_c_nl_v2_0\sdl2_display.h
 	<SDL2/SDL.h>
 
-1586437725 source:d:\projet_codesblocks\sdl2_part2\main.c
+1587479662 source:d:\projet_codesblocks\sdl2_part2\main.c
 	<stdio.h>
 	"SDl_Manager.h"
 	"SDL_Sprite.h"
@@ -751,9 +751,18 @@
 	"SDl_Manager.h"
 	"SDL_Sprite.h"
 
-1586437078 source:d:\projet_codesblocks\sdl2_part2\gamemanager.c
+1587480226 source:d:\projet_codesblocks\sdl2_part2\gamemanager.c
 	"GameManager.h"
+	<stdlib.h>
 
-1586437039 d:\projet_codesblocks\sdl2_part2\gamemanager.h
+1587480251 d:\projet_codesblocks\sdl2_part2\gamemanager.h
 	"SDL2/SDL.h"
+	"InputManager.h"
+
+1587480257 d:\projet_codesblocks\sdl2_part2\inputmanager.h
+	<SDL2/SDL.h>
+
+1587480266 source:d:\projet_codesblocks\sdl2_part2\inputmanager.c
+	"InputManager.h"
+	<stdio.h>
 

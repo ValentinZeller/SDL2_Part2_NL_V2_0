@@ -1,59 +1,51 @@
-#include "GameManager.h"
-#include <stdlib.h>
-
+#include "InputManager.h"
+#include <stdio.h>
 
 /****************************************************************************************************
-Description : Fonction init GameState
+Description : Fonction init input key evenements
 Input :
 Output :
 Note ://
 ******************************************************************************************************/
-void initGameState(){
 
-    eState=play;
-    initKeyGameEvent();
+ void initKeyGameEvent(){
+
+    kGameEvent=start;
+
 
 }
 /****************************************************************************************************
-Description : Fonction sate Game State
+Description : Fonction set input key evenements
 Input :
 Output :
 Note ://
 ******************************************************************************************************/
+void setGameEvent(){
 
-void setGameState(eKeyGameEvent kGameEvent){
+    kGameEvent=quit;
 
-    if(kGameEvent==quit){
-        eState=quitGame;
+
+}
+
+/****************************************************************************************************
+Description : Fonction de recuperation des inputs event
+Input :
+Output :
+Note ://
+******************************************************************************************************/
+void handleEvent(tEventType *event){
+
+    if(SDL_PollEvent(&event->event)){
+
+            switch(event->event.type){
+            case SDL_QUIT :setGameEvent();break;
+            default:break;
+
+
+            }
+
+
+
     }
 
-
 }
-
-/****************************************************************************************************
-Description : Fonction de Maj de instances manipuler par le gameManager
-Input :
-Output :
-Note ://
-******************************************************************************************************/
-void update(void *a,int *nFrames){
-
-
-
-     int *ad=a;
-     if(*nFrames%2){
-        *ad=50;
-     }else{
-
-        *ad=0;
-     }
-     (*nFrames)++;
-
-    setGameState(kGameEvent);
-    if(eState==quitGame){
-        exit(EXIT_SUCCESS);
-    }
-
-
-}
-
