@@ -47,12 +47,22 @@ extern void destroy_Sprite(SDL_Sprite *pSprite){
     if(pSprite->ptexture!=NULL){
         SDL_DestroyTexture(pSprite->ptexture);
         pSprite->ptexture=NULL;
+        pSprite->psurface=NULL;
     }
+
 
 
 
 }
 
+
+/****************************************************************************************************
+Description : Fonction d'affichage du sprite dans le rendu à l'écran
+Input : SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,int nNbTotalframe,int nDestRectX,int nDestRectY,
+                    int nScale
+Output : SDL_Manager->Renderer
+Note ://
+******************************************************************************************************/
 
 
 void SpriteToRender(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,int nNbTotalframe,int nDestRectX,int nDestRectY,
@@ -91,6 +101,24 @@ void SpriteToRender(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, 
        SDL_RenderCopy(pSdlManager->pRenderer, pSprite->ptexture, &srcRect, &destRect);
 
     }
+
+
+}
+
+void updateSprite(void *a,int *nFrames){
+
+
+
+     int *ad=a;
+     if(*nFrames%2){
+        *ad=50;
+     }else{
+
+        *ad=0;
+     }
+     (*nFrames)++;
+
+
 
 
 }

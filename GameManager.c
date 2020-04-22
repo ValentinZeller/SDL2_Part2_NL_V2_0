@@ -1,19 +1,6 @@
 #include "GameManager.h"
 #include <stdlib.h>
 
-
-/****************************************************************************************************
-Description : Fonction init GameState
-Input :
-Output :
-Note ://
-******************************************************************************************************/
-void initGameState(){
-
-    eState=play;
-    initKeyGameEvent();
-
-}
 /****************************************************************************************************
 Description : Fonction sate Game State
 Input :
@@ -21,39 +8,66 @@ Output :
 Note ://
 ******************************************************************************************************/
 
-void setGameState(eKeyGameEvent kGameEvent){
+void seteGameState(tMananger *gameManager){
 
-    if(kGameEvent==quit){
-        eState=quitGame;
+    if(gameManager->keyEvent.kGameEvent==quit){
+        gameManager->eState=quitGame;
     }
+
 
 
 }
 
 /****************************************************************************************************
-Description : Fonction de Maj de instances manipuler par le gameManager
+Description : Fonction init du manager
 Input :
 Output :
 Note ://
 ******************************************************************************************************/
-void update(void *a,int *nFrames){
+void initManager(tMananger *gameManager){
 
-
-
-     int *ad=a;
-     if(*nFrames%2){
-        *ad=50;
-     }else{
-
-        *ad=0;
-     }
-     (*nFrames)++;
-
-    setGameState(kGameEvent);
-    if(eState==quitGame){
-        exit(EXIT_SUCCESS);
-    }
+    initGameState(&gameManager->eState);
+    initKeyGameEvent(&gameManager->keyEvent);
 
 
 }
 
+
+/****************************************************************************************************
+Description : Fonction de Maj de instances manipulees par le gameManager
+Input :
+Output :
+Note ://
+******************************************************************************************************/
+
+
+void update(){
+
+    seteGameState(&gameManager);
+   //TODO Test updateSprite()
+
+
+}
+
+
+/****************************************************************************************************
+Description : Fonction d'execution de la methode exit() si condition remplie
+Input :
+Output :
+Note ://
+******************************************************************************************************/
+
+void stateQuitGame(){
+
+   if(gameManager.eState==quitGame){
+        exit(EXIT_SUCCESS);
+    }
+
+}
+
+
+void handleEvent(tMananger *gameManager){
+
+    InputEvent(&gameManager->event,&gameManager->keyEvent);
+
+}

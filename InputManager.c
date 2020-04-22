@@ -1,5 +1,6 @@
 #include "InputManager.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /****************************************************************************************************
 Description : Fonction init input key evenements
@@ -8,9 +9,10 @@ Output :
 Note ://
 ******************************************************************************************************/
 
- void initKeyGameEvent(){
+ void initKeyGameEvent(tKeyEventType *keyEvent){
 
-    kGameEvent=start;
+
+    keyEvent->kGameEvent=start;
 
 
 }
@@ -20,25 +22,25 @@ Input :
 Output :
 Note ://
 ******************************************************************************************************/
-void setGameEvent(){
+void setQuitEvent(tKeyEventType *keyEvent){
 
-    kGameEvent=quit;
+    keyEvent->kGameEvent=quit;
 
 
 }
 
 /****************************************************************************************************
-Description : Fonction de recuperation des inputs event
+Description : Fonction de recuperation des inputs et evenements
 Input :
 Output :
 Note ://
 ******************************************************************************************************/
-void handleEvent(tEventType *event){
+void InputEvent(tEventType *event,tKeyEventType *keyEvent){
 
     if(SDL_PollEvent(&event->event)){
 
             switch(event->event.type){
-            case SDL_QUIT :setGameEvent();break;
+            case SDL_QUIT :setQuitEvent(keyEvent);break;
             default:break;
 
 

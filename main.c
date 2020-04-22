@@ -15,7 +15,7 @@ int main(int argc, char *argv[]){
     SDL_Sprite sprite;
     int nX=0;
     int nFrames=1;
-    tEventType event;
+
 
     //appel fonction init SDL_Manager
     init_SdlManager(&sdlManager);
@@ -24,11 +24,11 @@ int main(int argc, char *argv[]){
     loadSprite(&sprite,"./Assets/Goku.png");
     createTexture(&sprite,&sdlManager);
 
-    initGameState();
+    initManager(&gameManager);
 
-    while(1){
+    while(gameManager.eState==play){
 
-    handleEvent(&event);
+    handleEvent(&gameManager);
 
     if(nFrames%2){
         //TODO refactoring SpriteToRender
@@ -41,7 +41,8 @@ int main(int argc, char *argv[]){
 
     printf("x : %d",nX);
 
-    update(&nX,&nFrames);
+   // update(&nX,&nFrames);
+    update();
     SDL_Delay(200);
     display(&sdlManager);
 
@@ -57,6 +58,9 @@ int main(int argc, char *argv[]){
 
     //appel de la fonction quitSDL
     quitSdl();
+
+    //Exit_Success
+    stateQuitGame();
 
 
 

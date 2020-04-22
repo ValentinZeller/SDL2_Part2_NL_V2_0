@@ -2,9 +2,8 @@
 #include "SDL_Sprite.h"
 
 /****************************************************************************************************
-Description : Fonction d'affichage du sprite dans le rendu à l'écran
-Input : SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,int nNbTotalframe,int nDestRectX,int nDestRectY,
-                    int nScale
+Description : Fonction qui efface l'ecran entre chaque nouvelle frame
+Input : SDL_Manager *pSdlManager
 Output : SDL_Manager->Renderer
 Note ://
 ******************************************************************************************************/
@@ -24,6 +23,13 @@ void clearScreen(SDL_Manager *pSdlManager){
 }
 
 
+
+/****************************************************************************************************
+Description : Fonction d'affichage du rendu à l'écran
+Input : SDL_Manager *pSdlManager
+Output : SDL_Manager->Renderer
+Note ://
+******************************************************************************************************/
 
 
 void display(SDL_Manager *pSdlManager){

@@ -43,6 +43,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="GameManager.h" />
+		<Unit filename="InputManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="InputManager.h" />
 		<Unit filename="SDL_Display.c">
 			<Option compilerVar="CC" />
 		</Unit>
