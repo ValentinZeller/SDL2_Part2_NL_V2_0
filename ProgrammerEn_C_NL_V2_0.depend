@@ -360,18 +360,16 @@
 1580117848 d:\projet_codeblocks\programmer_en_c_ludus_2019_2020\programmeren_c_nl_v2_0\sdl2_display.h
 	<SDL2/SDL.h>
 
-1587564004 source:d:\projet_codesblocks\sdl2_part2\main.c
+1587747889 source:d:\projet_codesblocks\sdl2_part2\main.c
 	<stdio.h>
-	"SDl_Manager.h"
-	"SDL_Sprite.h"
-	"SDL_Display.h"
+	"EngineManager.h"
 	"GameManager.h"
 
-1587562988 source:d:\projet_codesblocks\sdl2_part2\sdl_sprite.c
+1587738767 source:d:\projet_codesblocks\sdl2_part2\sdl_sprite.c
 	"SDL_Sprite.h"
 	<stdio.h>
 
-1586437691 source:d:\projet_codesblocks\sdl2_part2\sdl_manager.c
+1587657553 source:d:\projet_codesblocks\sdl2_part2\sdl_manager.c
 	"SDl_Manager.h"
 	<stdio.h>
 
@@ -732,7 +730,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1587554039 d:\projet_codesblocks\sdl2_part2\sdl_sprite.h
+1587738784 d:\projet_codesblocks\sdl2_part2\sdl_sprite.h
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
 	"SDl_Manager.h"
@@ -747,15 +745,15 @@
 	"SDl_Manager.h"
 	"SDL_Sprite.h"
 
-1587563105 source:d:\projet_codesblocks\sdl2_part2\sdl_display.c
+1587727890 source:d:\projet_codesblocks\sdl2_part2\sdl_display.c
 	"SDl_Manager.h"
 	"SDL_Sprite.h"
 
-1587563951 source:d:\projet_codesblocks\sdl2_part2\gamemanager.c
+1587565747 source:d:\projet_codesblocks\sdl2_part2\gamemanager.c
 	"GameManager.h"
 	<stdlib.h>
 
-1587563522 d:\projet_codesblocks\sdl2_part2\gamemanager.h
+1587742806 d:\projet_codesblocks\sdl2_part2\gamemanager.h
 	"SDL2/SDL.h"
 	"InputManager.h"
 	"GameState.h"
@@ -772,4 +770,20 @@
 
 1587553716 source:d:\projet_codesblocks\sdl2_part2\gamestate.c
 	"GameState.h"
+
+1587747773 source:d:\projet_codesblocks\sdl2_part2\viewport.c
+	"viewport.h"
+
+1587745718 d:\projet_codesblocks\sdl2_part2\viewport.h
+	<SDL2/SDL.h>
+	"SDL_Sprite.h"
+
+1587747743 source:d:\projet_codesblocks\sdl2_part2\enginemanager.c
+	"EngineManager.h"
+
+1587747632 d:\projet_codesblocks\sdl2_part2\enginemanager.h
+	"SDl_Manager.h"
+	"SDL_Sprite.h"
+	"SDL_Display.h"
+	"viewport.h"
 

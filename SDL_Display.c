@@ -36,6 +36,6 @@ void display(SDL_Manager *pSdlManager){
 
 
     SDL_RenderPresent(pSdlManager->pRenderer);
-    clearScreen(pSdlManager);
+    //clearScreen(pSdlManager);
 
 }

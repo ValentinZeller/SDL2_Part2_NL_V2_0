@@ -14,7 +14,7 @@ int init_SdlManager(SDL_Manager *pSdlManager){
     if(SDL_Init(SDL_INIT_EVERYTHING)>=0)
     {
             //Creer le pointeur sur la reference de la fenetre Win32
-            pSdlManager->pWindow=SDL_CreateWindow("SDL_Application",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,WINDOWW,WINDOWW
+            pSdlManager->pWindow=SDL_CreateWindow("SDL_Application",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,WINDOWW,WINDOWH
                                      ,SDL_WINDOW_SHOWN);
             //Si la fenetre creee
             if(pSdlManager->pWindow!=NULL){

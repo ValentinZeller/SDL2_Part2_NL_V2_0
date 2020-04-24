@@ -15,15 +15,17 @@ typedef struct {
     tEventType event;
 
 
+
 }tMananger;
 
 tMananger gameManager;
 
 
+
 extern void initManager(tMananger *gameManager);
 extern void seteGameState(tMananger *gameManager);
 extern void handleEvent(tMananger *gameManager);
-extern void update();
+extern void update(void *a,int *nFrames);
 extern void stateQuitGame();
 
 #endif // GAMEMANAGER_H_INCLUDED

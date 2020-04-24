@@ -41,10 +41,11 @@ Note ://
 ******************************************************************************************************/
 
 
-void update(){
+void update(void *a,int *nFrames){
 
     seteGameState(&gameManager);
-   //TODO Test updateSprite()
+
+   updateSprite(a,nFrames);
 
 
 }

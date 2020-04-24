@@ -26,7 +26,8 @@ Input : SDL_Sprite,SDL_Manager
 Output : SDL_Sprite
 Note ://
 ******************************************************************************************************/
-void createTexture(SDL_Sprite *pSprite,SDL_Manager *pSdlManager){
+void createSprite(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,
+                    int w,int h){
 
 
     if(pSprite->psurface){
@@ -34,7 +35,20 @@ void createTexture(SDL_Sprite *pSprite,SDL_Manager *pSdlManager){
         SDL_FreeSurface(pSprite->psurface);
     }
 
+
+    pSprite->SpriteSize.x=nSrcRectX;
+    pSprite->SpriteSize.y=nSrcRectY;
+    pSprite->SpriteSize.w=w;
+    pSprite->SpriteSize.h=h;
+
 }
+
+/*void createTexture2(SDL_Sprite *pSprite,SDL_Manager *pSdlManager){
+
+
+   pSprite->ptexture=SDL_CreateTexture(pSdlManager->pRenderer,SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TARGET,1024,768);
+
+}*/
 
 /****************************************************************************************************
 Description : Fonction de destruction des attributs de SDL_Sprite
@@ -65,7 +79,7 @@ Note ://
 ******************************************************************************************************/
 
 
-void SpriteToRender(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,int nNbTotalframe,int nDestRectX,int nDestRectY,
+/*void SpriteToRender(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,int nNbTotalframe,int nDestRectX,int nDestRectY,
                     int w,int h,int nScale){
 
     SDL_Rect srcRect;
@@ -73,6 +87,8 @@ void SpriteToRender(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, 
 
 
     if(pSprite->ptexture){
+
+
 
        //Rect Source
        srcRect.x=nSrcRectX;
@@ -98,12 +114,12 @@ void SpriteToRender(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, 
 
         //TODO update renderer
 
-       SDL_RenderCopy(pSdlManager->pRenderer, pSprite->ptexture, &srcRect, &destRect);
+
 
     }
 
 
-}
+}*/
 
 void updateSprite(void *a,int *nFrames){
 
@@ -122,3 +138,67 @@ void updateSprite(void *a,int *nFrames){
 
 
 }
+
+
+
+/*void tileMapping(SDL_Sprite *pSprite,SDL_Manager *pSdlManager,int nSrcRectX, int nSrcRectY,int nNbTotalframe,int nDestRectX,int nDestRectY,int w,int h,int nScale){
+
+    SDL_Rect srcRect;
+    SDL_Rect destRect;
+    //Tilset 384*256
+    //w=>12 tiles
+    //h=>8 tiles
+    int i,j;
+    if(pSprite->ptexture){
+
+       //Rect Source
+       srcRect.x=nSrcRectX;
+       srcRect.y=nSrcRectY;
+
+       srcRect.w=w;
+       srcRect.h=h;
+
+
+       //Rect Dest
+       destRect.x=nDestRectX;
+       destRect.y=nDestRectY;
+
+       if(nScale>0){
+        destRect.w=srcRect.w*nScale;
+        destRect.h=srcRect.h*nScale;
+
+       }else{
+
+        destRect.w=srcRect.w;
+        destRect.h=srcRect.h;
+       }
+
+       SDL_SetRenderDrawColor(pSdlManager->pRenderer,255,0,0,255);
+
+       for(i=0;i<8;i++){
+        for(j=0;j<12;j++){
+            SDL_Rect rect = {32*j, 32*i, 32, 32};
+            SDL_RenderDrawRect(pSdlManager->pRenderer, &rect);
+        }
+       }
+
+
+
+
+        //TODO update renderer
+
+
+
+    }
+
+
+
+
+}
+*/
+
+
+
+
+
+

@@ -1,63 +1,66 @@
 
 #include<stdio.h>
-#include "SDl_Manager.h"
-#include "SDL_Sprite.h"
-#include "SDL_Display.h"
+#include "EngineManager.h"
 #include "GameManager.h"
 
+
+
+//Tilset 384*256
+//w=>12 tiles
+//h=>8 tiles
 
 
 
 int main(int argc, char *argv[]){
 
 
-    SDL_Manager sdlManager;
-    SDL_Sprite sprite;
+
+    //SDL_Sprite sprite2;
     int nX=0;
     int nFrames=1;
 
 
-    //appel fonction init SDL_Manager
-    init_SdlManager(&sdlManager);
-    clearScreen(&sdlManager);
+    tEngineManager engine;
 
-    loadSprite(&sprite,"./Assets/Goku.png");
-    createTexture(&sprite,&sdlManager);
+    //appel fonction init Engine
+    engineInitManager(&engine);
+
+    //construction du background
+    char path[]="./Assets/Platformer_tilset/background/buildings-bg.png";
+    engineBuildSprite(&engine, path);
+
+
+    engineBuildViewport(&engine);
+
+    engineSpriteToViewPort(&engine);
+
+    //Création d'une texture qui sera l'emplacement du rendu
+    //dans ce cas les éléments à afficher ne peuvent pas dépasser la taille de r2
 
     initManager(&gameManager);
 
+
+
     while(gameManager.eState==play){
 
-    handleEvent(&gameManager);
+        handleEvent(&gameManager);
 
-    if(nFrames%2){
-        //TODO refactoring SpriteToRender
-        SpriteToRender(&sprite,&sdlManager,nX,794,2,(WINDOWW/2)-270,(WINDOWH/2)-355,48,98,10);
 
-    }else{
-         //TODO refactoring SpriteToRender
-        SpriteToRender(&sprite,&sdlManager,nX,794,2,(WINDOWW/2)-270,(WINDOWH/2)-355,70,98,10);
-    }
+        //TODO GameManagerUpdate + Engine update
+        update(&nX,&nFrames);
 
-    printf("x : %d",nX);
-
-   // update(&nX,&nFrames);
-    update();
-    SDL_Delay(200);
-    display(&sdlManager);
-
+        //SDL_Delay(200);
+        engineDisplay(&engine);
 
     }
-
 
      //appel de la fonction destruction des attributs SDL_Manager
-    destroy_SdlManager(&sdlManager);
+     engineDestroySdlManager(&engine);
     //appel de la fonction destruction sprite
-    destroy_Sprite(&sprite);
+     engineDestroySdlSprite(&engine);
 
-
-    //appel de la fonction quitSDL
-    quitSdl();
+    //Stop engine use
+     engineStop();
 
     //Exit_Success
     stateQuitGame();
